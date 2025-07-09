@@ -149,17 +149,34 @@ body > #main-footer {
     justify-content: center;
   }
   .btn {
-    width: 40vw;
-    height: 40vw;
-    max-width: 150px;
-    max-height: 150px;
-    margin: 1rem;
+    width: 32vw;
+    height: 32vw;
+    max-width: 90px;
+    max-height: 90px;
+    margin: 0.5rem;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  #scoreboard {
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.95rem;
+  }
+  #level-text {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+  }
+  #main-footer {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0 0.3rem 0;
   }
 }
 
