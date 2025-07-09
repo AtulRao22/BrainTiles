@@ -17,6 +17,10 @@ startBtn.addEventListener("click", function() {
         startBtn.disabled = true;
         levelText.textContent = "";
         scoreboardDiv.classList.add('hidden');
+        // Reset game state before starting a new game
+        gameSeq = [];
+        userSeq = [];
+        level = 0;
         levelUp();
     }
 });
