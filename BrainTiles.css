@@ -84,6 +84,32 @@ h2 {
   display: none;
 }
 
+#scoreboard {
+  display: inline-flex;
+  gap: 1.5rem;
+  background: #f7fafc;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  align-items: center;
+}
+
+#scoreboard span {
+  display: inline-block;
+}
+
+#total-score {
+  color: #3182ce;
+}
+
+#best-score {
+  color: #38a169;
+}
+
 @media (max-width: 600px) {
   .btn_container {
     flex-direction: column;
