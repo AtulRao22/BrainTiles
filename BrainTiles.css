@@ -79,17 +79,9 @@ body {
   cursor: not-allowed;
 }
 
-h1 {
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hidden {
-  display: none;
+h1, h2 {
+  text-align: center;
+  width: 100%;
 }
 
 #scoreboard {
@@ -104,6 +96,9 @@ h2 {
   font-weight: 600;
   color: #2d3748;
   align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #scoreboard span {
@@ -124,12 +119,13 @@ h2 {
   font-size: 1.1rem;
   font-weight: 500;
   color: #444;
+  text-align: center;
 }
 
 #main-footer {
   text-align: center;
   font-size: 0.95rem;
-  color: #555;
+  color: #666;
   padding: 0.7rem 0 0.5rem 0;
   margin-top: 1.5rem;
   letter-spacing: 0.02em;
