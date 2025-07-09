@@ -7,6 +7,16 @@ let started = false;
 let level = 0;
 
 let h2 = document.querySelector("h2");
+let startBtn = document.getElementById("start-btn");
+
+startBtn.addEventListener("click", function() {
+    if (!started) {
+        started = true;
+        startBtn.disabled = true;
+        h2.innerText = "";
+        levelUp();
+    }
+});
 
 document.addEventListener("keypress", function() {
     if(started == false) {
@@ -58,10 +68,11 @@ function checkAns(idx) {
         setTimeout(levelUp, 750);
     }
    }else {
-    h2.innerHTML = `Game over!! Your score was <b>${level} </b> <br>  Press any key to start..`;
+    h2.innerHTML = `Game over!! Your score was <b>${level} </b> <br>  Press button to start the game.`;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function() {
      document.querySelector("body").style.backgroundColor= "white";
+     startBtn.disabled = false;
     }, 1000);
     reset();
    }
@@ -90,5 +101,6 @@ function reset() {
     gameSeq = [];
     userSeq = [];
     level = 0;
+    h2.innerText = "";
 }
 
