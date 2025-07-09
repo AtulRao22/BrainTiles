@@ -1,5 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -126,6 +134,12 @@ h2 {
   margin-top: 1.5rem;
   letter-spacing: 0.02em;
   background: none;
+  /* Stick to bottom */
+  margin-bottom: 0;
+}
+
+body > #main-footer {
+  margin-top: auto;
 }
 
 @media (max-width: 600px) {
