@@ -1,6 +1,0 @@
-.flash {
-    background: white !important;
-    box-shadow: 0 0 80px 30px #fff, 0 0 20px 8px #fff, 0 0 10px 2px #0002;
-    border: 4px solid #fff700;
-    transition: background 0.15s, box-shadow 0.15s, border 0.15s;
-} 
