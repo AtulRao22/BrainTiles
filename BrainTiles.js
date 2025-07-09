@@ -21,6 +21,8 @@ startBtn.addEventListener("click", function() {
         gameSeq = [];
         userSeq = [];
         level = 0;
+        totalScore = 0;
+        updateScoreboard();
         levelUp();
     }
 });
