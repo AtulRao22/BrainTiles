@@ -45,8 +45,8 @@ body {
 #start-btn {
   display: inline-block;
   margin: 1.5rem auto 2rem auto;
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(135deg, #36d1c4, #5b86e5);
