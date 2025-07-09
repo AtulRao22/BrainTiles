@@ -6,14 +6,17 @@ let btns = ["yellow", "red", "blue", "green"];
 let started = false;
 let level = 0;
 
-let h2 = document.querySelector("h2");
+let h2 = document.querySelector("#game-instruction");
+let levelText = document.getElementById("level-text");
 let startBtn = document.getElementById("start-btn");
+const scoreboardDiv = document.getElementById('scoreboard');
 
 startBtn.addEventListener("click", function() {
     if (!started) {
         started = true;
         startBtn.disabled = true;
-        h2.innerText = "";
+        levelText.textContent = "";
+        scoreboardDiv.classList.add('hidden');
         levelUp();
     }
 });
@@ -48,7 +51,7 @@ function userFlash(btn) {
 function levelUp() {
     userSeq = [];
   level++;
-  h2.innerText = `Level ${level}`;
+  levelText.textContent = `Level ${level}`;
 
   let randIdx = Math.floor(Math.random() * 4);
   let randColor = btns[randIdx];
@@ -61,6 +64,18 @@ function levelUp() {
   gameFlash(randBtn);
 }
 
+let totalScore = 0;
+let bestScore = localStorage.getItem('bestScore') ? parseInt(localStorage.getItem('bestScore')) : 0;
+const totalScoreSpan = document.getElementById('total-score');
+const bestScoreSpan = document.getElementById('best-score');
+
+function updateScoreboard() {
+  totalScoreSpan.textContent = `Total Score: ${totalScore}`;
+  bestScoreSpan.textContent = `Best Score: ${bestScore}`;
+}
+
+updateScoreboard();
+
 function checkAns(idx) {
 
    if (userSeq[idx] === gameSeq[idx]) {
@@ -68,12 +83,20 @@ function checkAns(idx) {
         setTimeout(levelUp, 750);
     }
    }else {
-    h2.innerHTML = `Game over!! Your score was <b>${level} </b> <br>  Press button to start the game.`;
+    levelText.innerHTML = `Game over!! Your score was <b>${level} </b> <br>  Press button to start the game.`;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function() {
-     document.querySelector("body").style.backgroundColor= "white";
-     startBtn.disabled = false;
+      document.querySelector("body").style.backgroundColor= "white";
+      startBtn.disabled = false;
     }, 1000);
+    // Update scores
+    totalScore += level;
+    if (level > bestScore) {
+      bestScore = level;
+      localStorage.setItem('bestScore', bestScore);
+    }
+    updateScoreboard();
+    scoreboardDiv.classList.remove('hidden');
     reset();
    }
 }
@@ -101,6 +124,6 @@ function reset() {
     gameSeq = [];
     userSeq = [];
     level = 0;
-    h2.innerText = "";
+    levelText.textContent = "";
 }
 
