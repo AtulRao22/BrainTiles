@@ -44,7 +44,7 @@ body {
 
 #start-btn {
   display: inline-block;
-  margin: 1.5rem auto 2rem auto;
+  margin: 0.5rem auto 1rem auto;
   padding: 0.7rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
@@ -69,6 +69,15 @@ body {
 #start-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 600px) {
