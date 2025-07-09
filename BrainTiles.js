@@ -15,7 +15,7 @@ startBtn.addEventListener("click", function() {
     if (!started) {
         started = true;
         startBtn.disabled = true;
-        levelText.textContent = "";
+        levelText.textContent = "Game is starting...";
         scoreboardDiv.classList.add('hidden');
         // Reset game state before starting a new game
         gameSeq = [];
@@ -23,7 +23,9 @@ startBtn.addEventListener("click", function() {
         level = 0;
         totalScore = 0;
         updateScoreboard();
-        levelUp();
+        setTimeout(() => {
+            levelUp();
+        }, 2000);
     }
 });
 
